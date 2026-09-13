@@ -146,11 +146,10 @@ export default function RentalsPage() {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredRentals.map((r) => (
-           <Link
-            to={`/rentals/${r.listing_id}`}
-            key={r.listing_id}
-            className="bg-white rounded-2xl border border-warm-200 p-5 hover:shadow-md hover:border-ivy-300 transition-all flex flex-col justify-between group"
-          >
+            <div
+              key={r.listing_id}
+              className="bg-white rounded-2xl border border-warm-200 p-5 hover:shadow-md transition-all flex flex-col justify-between"
+            >
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-xs px-2.5 py-1 rounded-lg font-semibold bg-emerald-50 text-emerald-800">
@@ -198,7 +197,7 @@ export default function RentalsPage() {
                   Contact
                 </a>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       )}
