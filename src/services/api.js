@@ -172,8 +172,6 @@ class ApiClient {
     return this.request(`/v1/listings?${query.toString()}`);
   }
 
-
-
   async getListing(id) {
     // Discrepancy #8: Detail endpoint is plural /v1/listings/{id}
     return this.request(`/v1/listings/${id}`);
@@ -225,15 +223,6 @@ class ApiClient {
     return this.request(`/v1/saved/${listing_id}`, {
       method: 'DELETE',
     });
-  }
-
-  // Health check (unauthenticated endpoint)
-  async getHealth() {
-    const response = await fetch(`${this.baseUrl}/health`);
-    if (!response.ok) {
-      throw new Error(`Health check failed: ${response.status}`);
-    }
-    return response.json();
   }
 }
 
