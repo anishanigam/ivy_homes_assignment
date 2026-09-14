@@ -219,6 +219,15 @@ class ApiClient {
     });
   }
 
+    // Health check (unauthenticated endpoint)
+  async getHealth() {
+    const response = await fetch(`${this.baseUrl}/health`);
+    if (!response.ok) {
+      throw new Error(`Health check failed: ${response.status}`);
+    }
+    return response.json();
+  }
+
   async removeSavedListing(listing_id) {
     return this.request(`/v1/saved/${listing_id}`, {
       method: 'DELETE',
