@@ -1,5 +1,5 @@
-const BASE_URL = import.meta.env.VITE_API_URL || 'https://solve.ivy.homes';
-const API_KEY = import.meta.env.VITE_API_KEY || 'IVY26-007DED9E24B4';
+const BASE_URL = import.meta.env.VITE_API_URL ;
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 class ApiClient {
   constructor() {
